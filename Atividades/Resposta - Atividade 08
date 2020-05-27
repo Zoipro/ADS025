@@ -14,24 +14,39 @@ Departamento(chave=numero_depto, valor={nome_depto})
 
 
 b)
-Pedido (cod_pedido*, dat_emissao, cod_fornecedor, vlr_total_pedido)
-Pedido_Material (cod_pedido*, cod_material*, qtd_pedido, vlr_total_material)
-Material (cod_material*, dsc_material, vlr_unitario),
-Fornecedor (cod_fornecedor*, nom_fornecedor, end_fornecedor)
+
+Pedido(chave=cod_pedido, valor={dat_emissao, cod_fornecedor, vlr_total_pedido})
+
+Pedido_Material(chave=cod_pedido, chave=cod_material, valor={qtd_pedido, vlr_total_material})
+
+Material(chave=cod_material, valor={dsc_material, vlr_unitario})
+
+Fornecedor(chave=cod_fornecedor, valor={nom_fornecedor, end_fornecedor})
 
 c)
-Turma (codigo_aluno*, cod_curso*, data_matricula)
-Aluno (codigo_aluno*, nome_aluno, email_aluno, fone_contato)
-Curso (cod_curso*, nome_curso)
+
+Turma(chave=codigo_aluno, chave=cod_curso, valor={data_matricula})
+
+Aluno(chave=codigo_aluno, valor={nome_aluno, email_aluno, fone_contato})
+
+Curso(chave=cod_curso, valor={nome_curso})
 
 d)
-Consulta (num_paciente*,  data_consulta*, cod_medico*, dsc_diagnostico)
-Paciente (num_paciente*, nome_paciente)
-Medico (cod_medico*, nome_medico, cod_especialidade)
-Especialidade (cod_especialidade*, dsc_especialidade)
+
+Consulta(chave=num_paciente, chave=data_consulta, chave=data_medico, valor={dsc_diagnostico})
+
+Paciente(chave=num_paciente, valor={nome_paciente})
+
+Medico(chave=cod_medico, valor={nome_medico, cod_especialidade})
+
+Especialidade(chave=cod_especialidade, valor={dsc_especialidade})
 
 e)
-Emprestimo (num_matricula*, num_isbn*, dat_emprestimo*, dat_devolucao)
-Aluno (num_matricula*, nom_aluno)
-Livro (num_isbn*, tit_livro, num_paginas, cod_editora)
-Editora (cod_editora*, nom_editora)
+
+Emprestimo(chave=num_matricula, chave=num_isbn, chave=dat_emprestimo, valor={dat_devolucao})
+
+Aluno(chave=num_matricula, valor={nom_aluno})
+
+Livro(chave=num_isbn, valor={tit_livro, num_paginas, cod_editora})
+
+Editora(chave=cod_editora, valor={nom_editora})
