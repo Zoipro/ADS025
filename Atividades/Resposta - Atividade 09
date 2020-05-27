@@ -1,0 +1,55 @@
+RESPOSTAS:
+
+1. Crie o modelo NoSQL orientado a colunas para os seguintes modelos relacionais.
+
+a) 
+chave=numero, tipo=projeto, valor={nome_projeto, data_inicio_projeto, numero_gerente}
+
+chave=numero, tipo=projeto, valor={horas_trabalhadas_projeto}
+chave=numero, tipo=empregado, valor={horas_trabalhadas_projeto}
+
+chave=numero, tipo=empregado, valor={nome_empregado, numero_depto}
+
+chave=numero, tipo=gerente, valor={nome_gerente}
+
+chave=numero, tipo=depto, valor={nome_depto}
+
+b)
+chave=cod, tipo=pedido, valor={dat_emissao, cod_fornecedor, vlr_total_pedido}
+
+chave=cod, tipo=pedido, valor={qtd_pedido, vlr_total_material}
+chave=cod, tipo=material, valor={qtd_pedido, vlr_total_material}
+
+chave=cod, tipo=material, valor={dsc_material, vlr_unitario}
+
+chave=cod, tipo=fornecedor, valor={nom_fornecedor, end_fornecedor}
+
+c)
+chave=codigo, tipo=aluno, valor={data_matricula}
+chave=cod, tipo=curso, valor={data_matricula}
+
+chave=codigo, tipo=aluno, valor={nome_aluno, email_aluno, fone_contato}
+
+chave=cod, tipo=curso, valor{nome_curso}
+
+d)
+chave=num, tipo=paciente, valor={dsc_diagnostico}
+chave=data, tipo=consulta, valor={dsc_diagnostico}
+chave=cod, tipo=medico, valor={dsc_diagnostico}
+
+chave=num, tipo=paciente, valor{nome_paciente}
+
+chave=cod, tipo=medico, valor={nome_medico, cod_especialidade}
+
+chave=cod, tipo=especialidade, valor={dsc_especialidade}
+
+e)
+chave=num, tipo=matricula, valor={dat_devolucao}
+chave=num, tipo=isbn, valor={dat_devolucao}
+chave=dat, tipo=emprestimo, valor={dat_devolucao}
+
+chave=num, tipo=matricula, valor{nom_aluno}
+
+chave=num, tipo=isbn, valor={tit_livro, num_paginas, cod_editora}
+
+chave=cod, tipo=editora, valor={nom_editora}
