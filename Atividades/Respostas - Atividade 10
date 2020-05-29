@@ -26,17 +26,36 @@ Fornecedor (cod_fornecedor*, nom_fornecedor, end_fornecedor)
 
 c)
 Turma (codigo_aluno*, cod_curso*, data_matricula)
+{cod_aluno:"", nome_aluno:"",  email_aluno:"", fone_contato:"", data_matricula:"", curso:{cod_curso:"", nome_curso:"",}}
+
 Aluno (codigo_aluno*, nome_aluno, email_aluno, fone_contato)
+{cod_aluno:"", nome_aluno:"",  email_aluno:"", fone_contato:"",}
+
 Curso (cod_curso*, nome_curso)
+{cod_curso:"", nome_curso:"",}
 
 d)
 Consulta (num_paciente*,  data_consulta*, cod_medico*, dsc_diagnostico)
+{num_paciente:"", data_consulta:"", dsc_diagnostico:"", medico:{cod_medico:"", nome_medico:"", cod_especialidade:"", dsc_especialidade:"",}
+
 Paciente (num_paciente*, nome_paciente)
+{mum_paciente:"", nome_paciente:"",}
+
 Medico (cod_medico*, nome_medico, cod_especialidade)
+{medico:cod_medico:"", nome_medico:"", cod_especialidade:"",}
+
 Especialidade (cod_especialidade*, dsc_especialidade)
+{cod_especialidade:"", dsc_especialidade:"",}
 
 e)
 Emprestimo (num_matricula*, num_isbn*, dat_emprestimo*, dat_devolucao)
+aluno:{num_matricula:"", nom_aluno:"", num_matricula:"", dat_emprestimo:"", dat_devolucao:"",  livro:{num_isbn:"", tit_livro:"", num_paginas:"", cod_editora:"",}}
+
 Aluno (num_matricula*, nom_aluno)
+{num_matricula:"", nom_aluno:"",}
+
 Livro (num_isbn*, tit_livro, num_paginas, cod_editora)
-Editora (cod_editora*, nom_edi
+{num_isbn:"", tit_livro:"", num_paginas:"", cod_editora:"",}
+
+Editora (cod_editora*, nom_editora)
+{cod_editora:"", nom_editora:"",}
