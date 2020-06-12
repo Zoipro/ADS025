@@ -1,21 +1,21 @@
 RESPOSTAS: 
 
 a) 
+{id: "1", projeto:{numero_projeto:0, nome_projeto: "AAAAA", data_inicio_projeot: "00/00/0000", numero_gerente: 0}}
 
-Projeto(chave=numero_projeto, valor={nome_projeto, data_inicio_projeto, numero_gerente})
+{id:"1", empregado:{mumero_projeto: 0, numeor_empregado: 0, horas_trabalho_projeto: "00:00h"}}
 
-Projeto_Empregado(chave=numero_projeto, chave=numero_empregado, valor={horas_trabalhadas_projeto})
-
-Empregado(chave=numero_empregado, valor={nome_empregado, numero_depto})
+{id:"1", empregado:{numero_empregado:0, nome_empregado: "AAAAA", numero_depto:0}}
 
 Gerente(chave=numero_gerente, valor={nome_gerente})
 
-Departamento(chave=numero_depto, valor={nome_depto})
+{id:"1", gerente:{numero_gerente:0, nome_gerente: "AAAAA"}}
 
+{id:"1", numero_depto:0, nome_depto: "AAAAA"}
 
 b)
 
-Pedido(chave=cod_pedido, valor={dat_emissao, cod_fornecedor, vlr_total_pedido})
+{id:"1", cod_pedido:0, dat_emissao: "00/00/0000", cod_fornecedor:0, vlr_total_pedido: "000000"}
 
 Pedido_Material(chave=cod_pedido, chave=cod_material, valor={qtd_pedido, vlr_total_material})
 
