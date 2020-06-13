@@ -7,46 +7,48 @@ a)
 
 {id:"1", empregado:{numero_empregado:0, nome_empregado: "AAAAA", numero_depto:0}}
 
-Gerente(chave=numero_gerente, valor={nome_gerente})
+{id:"1", numero_gerente:0, nome_gerente: "AAAAA"}}
 
-{id:"1", gerente:{numero_gerente:0, nome_gerente: "AAAAA"}}
-
-{id:"1", numero_depto:0, nome_depto: "AAAAA"}
+{id:"1", numero_depto:0000, nome_depto: "AAAAA"}
 
 b)
 
 {id:"1", cod_pedido:0, dat_emissao: "00/00/0000", cod_fornecedor:0, vlr_total_pedido: "000000"}
 
-Pedido_Material(chave=cod_pedido, chave=cod_material, valor={qtd_pedido, vlr_total_material})
+{id:"1", cod_pedido:0, cod_material: 0, qtd_pedido: 0, vlr_total_material: "000000"}
 
-Material(chave=cod_material, valor={dsc_material, vlr_unitario})
+{id:"1", cod_material:0, dsc_material: 0, vlr_unitario:"0000"}
 
-Fornecedor(chave=cod_fornecedor, valor={nom_fornecedor, end_fornecedor})
+{id:"1", cod_fornecedor:0, nom_fornecedor: "AAAAA", end_fornecedor:"QUADRA 000, RUA 00, CASA 00"}
 
 c)
 
-Turma(chave=codigo_aluno, chave=cod_curso, valor={data_matricula})
+{id:"1", cod_aluno:0, cod_curso: 0, data_matricula:"00/00/0000"}
 
-Aluno(chave=codigo_aluno, valor={nome_aluno, email_aluno, fone_contato})
+{id:"1", cod_pedido:0, dat_emissao: "00/00/0000", cod_fornecedor:0, vlr_total_pedido: "000000"}
 
-Curso(chave=cod_curso, valor={nome_curso})
+{id:"1", cod_curso:0, nome_curso: "AAAA"}
 
 d)
 
-Consulta(chave=num_paciente, chave=data_consulta, chave=data_medico, valor={dsc_diagnostico})
+{id:"1", num_paciente:00000, dat_consulta: "00/00/0000", data_medico:"00/00/0000", dsc_diagnostico: "AAAAA"}
 
-Paciente(chave=num_paciente, valor={nome_paciente})
+{id:"1", num_paciente:00000, nome_paciente: "AAAAA"}
 
 Medico(chave=cod_medico, valor={nome_medico, cod_especialidade})
+{id:"1", cod_medico:0, nome_medico: "AAAAA", cod_especialidade:0}
 
 Especialidade(chave=cod_especialidade, valor={dsc_especialidade})
+{id:"1", cod_especialidade:0, dsc_especialidade: "AAAAA"}
 
 e)
 
-Emprestimo(chave=num_matricula, chave=num_isbn, chave=dat_emprestimo, valor={dat_devolucao})
+{id:"1", num_matricula:00000, num_isbn: 000000, dat_emprestimo:"00/00/0000", dat_devolucao: "00/00/0000"}
 
-Aluno(chave=num_matricula, valor={nom_aluno})
+{id:"1", num_matricula:"00/00/0000", nom_aluno: "AAAA"}
 
 Livro(chave=num_isbn, valor={tit_livro, num_paginas, cod_editora})
+{id:"1", num_isbn:00000, tit_livro: "AAAAAA", num_paginas:0000, cod_editora: 0}
 
 Editora(chave=cod_editora, valor={nom_editora})
+{id:"1", cod_editora:0, nom_editora: "AAAAA"}
