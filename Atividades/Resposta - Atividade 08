@@ -35,10 +35,8 @@ d)
 
 {id:"1", num_paciente:00000, nome_paciente: "AAAAA"}
 
-Medico(chave=cod_medico, valor={nome_medico, cod_especialidade})
 {id:"1", cod_medico:0, nome_medico: "AAAAA", cod_especialidade:0}
 
-Especialidade(chave=cod_especialidade, valor={dsc_especialidade})
 {id:"1", cod_especialidade:0, dsc_especialidade: "AAAAA"}
 
 e)
@@ -47,8 +45,6 @@ e)
 
 {id:"1", num_matricula:"00/00/0000", nom_aluno: "AAAA"}
 
-Livro(chave=num_isbn, valor={tit_livro, num_paginas, cod_editora})
 {id:"1", num_isbn:00000, tit_livro: "AAAAAA", num_paginas:0000, cod_editora: 0}
 
-Editora(chave=cod_editora, valor={nom_editora})
 {id:"1", cod_editora:0, nom_editora: "AAAAA"}
