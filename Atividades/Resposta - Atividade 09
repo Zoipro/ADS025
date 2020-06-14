@@ -3,19 +3,20 @@ RESPOSTAS:
 1. Crie o modelo NoSQL orientado a colunas para os seguintes modelos relacionais.
 
 a) 
-chave=numero, tipo=projeto, valor={nome_projeto, data_inicio_projeto, numero_gerente}
+{id: "1", projeto {nome_projeoto: "AAAAA", data_inicio_projeto: "00/00/0000", numero_gerente: "000000"}}
 
-chave=numero, tipo=projeto, valor={horas_trabalhadas_projeto}
-chave=numero, tipo=empregado, valor={horas_trabalhadas_projeto}
+{id: "1", projeto {horas_trabalhadas_projeto: "00/00h"}}
 
-chave=numero, tipo=empregado, valor={nome_empregado, numero_depto}
+{id: "1", empregado {horas_trabalhadas_projeto: "00/00h"}}
 
-chave=numero, tipo=gerente, valor={nome_gerente}
+{id: "1",empregado {nome_empregado: "AAAAA", numero_depto: "000000" }}
 
-chave=numero, tipo=depto, valor={nome_depto}
+{id: "1", gerente {nome_gerente: "AAAAA"}}
+
+{id: "1", depto {nome_depto: "AAAAA"}}
 
 b)
-chave=cod, tipo=pedido, valor={dat_emissao, cod_fornecedor, vlr_total_pedido}
+{id: "1", pedido {data_emissao: "00/00/0000", cod_fornecedor:0, vlr_total_pedido: "R$00000"}}
 
 chave=cod, tipo=pedido, valor={qtd_pedido, vlr_total_material}
 chave=cod, tipo=material, valor={qtd_pedido, vlr_total_material}
