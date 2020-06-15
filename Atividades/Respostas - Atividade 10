@@ -130,26 +130,78 @@ Curso (cod_curso*, nome_curso)
 
 d)
 Consulta (num_paciente*,  data_consulta*, cod_medico*, dsc_diagnostico)
-{num_paciente:"", data_consulta:"", dsc_diagnostico:"", medico:{cod_medico:"", nome_medico:"", cod_especialidade:"", dsc_especialidade:"",}
+{consulta:{
+   id:1,
+   },
+   paciente:{
+   id:2,
+   num_paciente:"00000", 
+   nome_paciente:"AAAAAA"
+ },
+   medico:{
+   id:3,
+   nome_medico:"AAAAA", 
+ },
+   especialidade:{
+   id:4,
+   dsc_especialidade:"AAAAAA"
+ },
+   data_consulta:"00/00/0000"
+ }}
 
 Paciente (num_paciente*, nome_paciente)
-{mum_paciente:"", nome_paciente:"",}
+{paciente:{
+   id:1,
+   num_paciente:"00000", 
+   nome_paciente:"AAAAAA"
+ }}
 
 Medico (cod_medico*, nome_medico, cod_especialidade)
-{medico:cod_medico:"", nome_medico:"", cod_especialidade:"",}
+{medico:{
+   id:1,
+   nome_medico:"AAAAA", 
+ },
+   especialidade:{
+   id:2,
+   dsc_especialidade:"AAAAAA"
+ }}
 
 Especialidade (cod_especialidade*, dsc_especialidade)
-{cod_especialidade:"", dsc_especialidade:"",}
+{especialidade:{
+   id:1,
+   dsc_especialidade:"AAAAAA"
+ }}
 
 e)
 Emprestimo (num_matricula*, num_isbn*, dat_emprestimo*, dat_devolucao)
-aluno:{num_matricula:"", nom_aluno:"", num_matricula:"", dat_emprestimo:"", dat_devolucao:"",  livro:{num_isbn:"", tit_livro:"", num_paginas:"", cod_editora:"",}}
+{emprestimo:{
+   id:1,
+   num_matricula:"00000"
+   num_isbn:"00000"
+   dat_emprestimo:"00/00/0000"
+   dat_devolucao:"00/00/0000"
+ }}
 
 Aluno (num_matricula*, nom_aluno)
-{num_matricula:"", nom_aluno:"",}
+{aluno:{
+   id:1,
+   num_matricula:"00000"
+   nom_aluno:"AAAAAA"
+ }}
 
 Livro (num_isbn*, tit_livro, num_paginas, cod_editora)
-{num_isbn:"", tit_livro:"", num_paginas:"", cod_editora:"",}
+{livro:{
+   id:1,
+   tit_livro:"AAAAA"
+   num_paginas:"00000"
+   },
+   editora:{
+   id:2,
+   nom_editora:"AAAAA"
+ }}
 
 Editora (cod_editora*, nom_editora)
-{cod_editora:"", nom_editora:"",}
+{editora:{
+   id:1,
+   nom_editora:"AAAAA"
+ }}
