@@ -1,38 +1,132 @@
 1. RESPOSTAS:
 
 a) 
-{numero_projeto:"", nome_projeto:"", data_inicio_projeto:"", gerente:{numero_gerente:"", nome_gerente:""}}
+{projeto:{
+   id:1,
+   nome_projeto:"AAAAA",
+   data_inicio_projeto:"00/00/0000"
+   },
+   gerente:{
+   id:2,
+   numero_gerente:"00000", 
+   nome_gerente:"AAAAA"
+ }}
 
-{numero_projeto:"", nome_projeto:"", data_inicio_projeto:"", gerente:{numero_gerente:"", nome_gerente:""}, empregados:[empregado:{nome:"", dept:{numero:"", nome:""} horas_trabalhadas:"",}]}
+{projeto:{
+   id:1,
+   nome_projeto:"AAAAA",
+   data_inicio_projeto:"00/00/0000" 
+   },
+   gerente:{
+   id:2,
+   numero_gerente:"00000", 
+   nome_gerente:"AAAAA"
+   },
+   empregados:{
+   id:3,
+   nome:"AAAAA" 
+   },
+   dept:{
+   id:4,
+   numero:"000000", 
+   nome:"AAAAA"
+   horas_trabalhadas:"00H00",
+}}
 
-{numero_empregado:"", nome_empregado:"", depto:{numero_gerente:"", nome_depto:""}}
+{empregado:{
+  id:1,
+  numero_empregado:"00000", 
+  nome_empregado:"AAAAA"
+  },
+  depto:{
+  id:2,
+  numero_gerente:"0000", 
+  nome_depto:"AAAAA"
+}}
 
-{numero_gerente:"", nome_gerente:"",}
+{gerente:{
+   id:1,
+   numero_gerente:"00000", 
+   nome_gerente:"AAAAA"
+ }}
 
-{numero_depto:"", nome_depto:"",}
+{depto:{
+  id:1,
+  numero_gerente:"0000", 
+  nome_depto:"AAAAA"
+}}
 
 b)
 Pedido (cod_pedido*, dat_emissao, cod_fornecedor, vlr_total_pedido)
-{cod_pedido:"", dat_emissao:"",  vlr_total_pedido:"", fornecedor:{cod_fornecedor:"", nom_fornecedor:"", end_fornecedor:"",}}
+{pedido:{
+   id:1,
+   data_emissao:"00/00/0000" 
+   },
+   fornecedor:{
+   id:2,
+   nom_fornecedor:"AAAAA", 
+   end_fornecedor:"quadra 00, rua 00, casa 00"
+ },
+   vlr_total_pedido: "R$000000"
+ }}
 
 Pedido_Material (cod_pedido*, cod_material*, qtd_pedido, vlr_total_material)
-{cod_pedido:"", qtd_pedido:"", material:"",  cod_material:"", dsc_material:"", vlr_unitario:"", vlr_total_material:"",}
+{pedido_material:{
+   id:1,
+   qtd_pedido:"000000" 
+   },
+   material:{
+   id:2,
+   dsc_material:"AAAAA", 
+   vlr_unitario:"R$00000"
+ },
+ vlr_total_material: "R$00000"
+ }}
 
 Material (cod_material*, dsc_material, vlr_unitario)
-{cod_material:"", dsc_material:"", vlr_unitario:"",}
+{material:{
+   id:1,
+   dsc_material:"AAAAA", 
+   vlr_unitario:"R$00000"
+ }}
 
 Fornecedor (cod_fornecedor*, nom_fornecedor, end_fornecedor)
-{cod_fornecedor:"", nom_fornecedor:"", end_fornecedor"",}
+{fornecedor:{
+   id:1,
+   nom_fornecedor:"AAAAA", 
+   end_fornecedor:"quadra 00, rua 00, casa 00"
+ }}
 
 c)
 Turma (codigo_aluno*, cod_curso*, data_matricula)
-{cod_aluno:"", nome_aluno:"",  email_aluno:"", fone_contato:"", data_matricula:"", curso:{cod_curso:"", nome_curso:"",}}
+{turma:{
+   id:1,
+   aluno:{
+   id:2,
+   nome_aluno:"AAAAA",
+   email_aluno:"aaaa@gmail.com"
+   fone_contato: "(00) 00000-0000"
+   },
+   curso:{
+   id:3,
+   nome_curso:"AAAAA"
+ },
+ data_matricula: "00/00/0000"
+ }}
 
 Aluno (codigo_aluno*, nome_aluno, email_aluno, fone_contato)
-{cod_aluno:"", nome_aluno:"",  email_aluno:"", fone_contato:"",}
+{aluno:{
+   id:1,
+   nome_aluno:"AAAAA",
+   email_aluno:"aaaa@gmail.com"
+   fone_contato: "(00) 00000-0000"
+ }}
 
 Curso (cod_curso*, nome_curso)
-{cod_curso:"", nome_curso:"",}
+{curso:{
+   id:1,
+   nome_curso:"AAAAA"
+ }}
 
 d)
 Consulta (num_paciente*,  data_consulta*, cod_medico*, dsc_diagnostico)
