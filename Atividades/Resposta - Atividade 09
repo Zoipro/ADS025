@@ -18,39 +18,59 @@ a)
 b)
 {id: "1", pedido {data_emissao: "00/00/0000", cod_fornecedor:0, vlr_total_pedido: "R$00000"}}
 
-chave=cod, tipo=pedido, valor={qtd_pedido, vlr_total_material}
-chave=cod, tipo=material, valor={qtd_pedido, vlr_total_material}
+{id: "1", pedido {qtd_pedido: "00000", vlr_total_material: "R$00000"}}
 
 chave=cod, tipo=material, valor={dsc_material, vlr_unitario}
+{id: "1", material {dsc_material: "AAAAA", vlr_unitario: "R$00000"}}
 
 chave=cod, tipo=fornecedor, valor={nom_fornecedor, end_fornecedor}
+{id: "1", fornecedor {nom_fornecedor: "AAAAA", end_fonecedor: "quadra 00, rua 00, casa 00"}}
 
 c)
 chave=codigo, tipo=aluno, valor={data_matricula}
+{id: "1", aluno {data_matricula: "00/00/0000"}}
+
 chave=cod, tipo=curso, valor={data_matricula}
+{id: "1", curso {data_matricula: "00/00/0000"}}
 
 chave=codigo, tipo=aluno, valor={nome_aluno, email_aluno, fone_contato}
+{id: "1", aluno {nome_aluno: "AAAAAA", email_aluno: "aaaa@gmail.com", fone_contato: "(00) 00000-0000"}}
 
 chave=cod, tipo=curso, valor{nome_curso}
+{id: "1", curso {nome_curso: "AAAAA"}}
 
 d)
 chave=num, tipo=paciente, valor={dsc_diagnostico}
+{id: "1", paciente {dsc_diagnostico: "AAAAAA"}}
+
 chave=data, tipo=consulta, valor={dsc_diagnostico}
+{id: "1", consulta {dsc_diagnostico: "AAAAA"}}
+
 chave=cod, tipo=medico, valor={dsc_diagnostico}
+{id: "1", medico {dsc_diagnostico: "AAAAA"}}
 
 chave=num, tipo=paciente, valor{nome_paciente}
+{id: "1", paciente {nome_paciente: "AAAAA"}}
 
 chave=cod, tipo=medico, valor={nome_medico, cod_especialidade}
+{id: "1", medico {nome_nedico: "AAAAA", cod_especialidade: 0}}
 
 chave=cod, tipo=especialidade, valor={dsc_especialidade}
+{id: "1", especialidade {dsc_especialidade: "AAAAA"}}
 
 e)
-chave=num, tipo=matricula, valor={dat_devolucao}
-chave=num, tipo=isbn, valor={dat_devolucao}
+{id: "1", matricula {dat_devolucao: "00/00/0000"}}
+
+{id: "1", isbn {dat_devolucao: "00/00/0000"}}
+
 chave=dat, tipo=emprestimo, valor={dat_devolucao}
+{id: "1", emprestimo {dat_devolucao: "00/00/0000"}}
 
 chave=num, tipo=matricula, valor{nom_aluno}
+{id: "1", matricula {nom_aluno: "AAAAA"}}
 
 chave=num, tipo=isbn, valor={tit_livro, num_paginas, cod_editora}
+{id: "1", isbn {tit_livro: "AAAAA", num_paginas: "00000", cod_editora: "AAA0000A"}}
 
 chave=cod, tipo=editora, valor={nom_editora}
+{id: "1", editora {nom_editora: "AAAAA"}}
