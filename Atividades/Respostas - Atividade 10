@@ -1,6 +1,7 @@
 1. RESPOSTAS:
 
 a) 
+Projeto (numero_projeto *, nome_projeto, data_inicio_projeto, numero_gerente)
 {projeto:{
    id:1,
    nome_projeto:"AAAAA",
@@ -12,15 +13,11 @@ a)
    nome_gerente:"AAAAA"
  }}
 
+Projeto_Empregado (numero_projeto *, numero_empregado *, horas_trabalhadas_projeto)
 {projeto:{
    id:1,
    nome_projeto:"AAAAA",
    data_inicio_projeto:"00/00/0000" 
-   },
-   gerente:{
-   id:2,
-   numero_gerente:"00000", 
-   nome_gerente:"AAAAA"
    },
    empregados:{
    id:3,
@@ -33,6 +30,7 @@ a)
    horas_trabalhadas:"00H00",
 }}
 
+Empregado (numero_empregado *, nome_empregado, numero_depto)
 {empregado:{
   id:1,
   numero_empregado:"00000", 
@@ -44,12 +42,14 @@ a)
   nome_depto:"AAAAA"
 }}
 
+Gerente (numero_gerente *, nome_gerente)
 {gerente:{
    id:1,
    numero_gerente:"00000", 
    nome_gerente:"AAAAA"
  }}
 
+Departamento (numero_depto *, nome_depto)
 {depto:{
   id:1,
   numero_gerente:"0000", 
