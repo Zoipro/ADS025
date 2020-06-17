@@ -7,8 +7,8 @@ db.createCollection("projeto", {
                      bsonType: "object", 
                      required: [ "numeroProjeto", "nomeProjeto" ],
                      properties: {
-			"numeroProjeto" : { bsonType: "int" },
-      "nomeProjeto" : { bsonType: "string" },
+      "numeroProjeto" : { bsonType: "int"maxLength: 20 },
+      "nomeProjeto" : { bsonType: "string"maxLength: 100 },
                                     
                      }
             }
@@ -21,8 +21,8 @@ db.createCollection("gerente", {
                      bsonType: "object",
                      required: ["numeroGerente", "nomeGerente"],
                			 properties: {
- 			        "numeroGerente" : {bsonType: "int" } ,
-              "nomeGerente" : { bsonType: "string" },                                       
+ 	      "numeroGerente" : {bsonType: "int"maxLength: 20 } ,
+              "nomeGerente" : { bsonType: "string"maxLength: 100 },                                       
                                  }
               }
      }
@@ -34,7 +34,7 @@ db.createCollection("projeto_empregado", {
                      bsonType: "object",
                      required: ["numero_projeto", "numero_empregado"],
                			 properties: {
- 		"horas_trabalhadas_projeto" : {bsonType: "int"} ,                                    
+ 		"horas_trabalhadas_projeto" : {bsonType: "int"maxLength: 100} ,                                    
                                  }
               }
      }
@@ -46,7 +46,7 @@ db.createCollection("empregado", {
                      bsonType: "object",
                      required: ["numero_empregado", "nome_empregado"],
                			 properties: {
- 		"numero_depto" : {bsonType: "int"} ,                                    
+ 		"numero_depto" : {bsonType: "int"maxLength: 100} ,                                    
                                  }
               }
      }
@@ -58,7 +58,7 @@ db.createCollection("departamento", {
                      bsonType: "object",
                      required: ["numero_depto", "nome_depto"],
                			 properties: {
- 		"nome_depto" : {bsonType: "string"} ,                                    
+ 		"nome_depto" : {bsonType: "string"maxLength: 100} ,                                    
                                  }
               }
      }
@@ -71,7 +71,7 @@ db.createCollection("pedido", {
                      bsonType: "object",
                      required: ["cod_pedido", "dat_emissao", "cod_fornecedor"],
                			 properties: {
- 		"vlr_total_pedido" : {bsonType: "int"} ,                                    
+ 		"vlr_total_pedido" : {bsonType: "int"maxLength: 100} ,                                    
                                  }
               }
      }
@@ -82,8 +82,8 @@ db.createCollection("fornecedor", {
              $jsonSchema : {
                      bsonType: "object",
                      required: ["cod_fornecedor", "nom_fornecedor"],
-               			 properties: {
- 		"end_fornecedor" : {bsonType: "string"} ,                                    
+               	     properties: {
+ 		"end_fornecedor" : {bsonType: "string"maxLength: 100} ,                                    
                                  }
               }
      }
@@ -93,8 +93,190 @@ db.createCollection("pedido_material", {
      validator: {
              $jsonSchema : {
                      bsonType: "object",
-                     required: ["cod_pedido", "cod_material","qtde_material","vlr_material"],                                   
+                     required: ["cod_pedido", "cod_material","qtde_material","vlr_material"],    
+		     properties: {
+	        "qtde_material" : {bsonType: "int"maxLength: 100} ,  
+		"vlr_material" : {bsonType: "int"maxLength: 100} , 
                                  }
               }
      }
+})
+
+db.createCollection("material", {
+     validator: {
+             $jsonSchema : {
+                     bsonType: "object",
+                     required: ["cod_material", "dsc_material", "vlr_unitario"],
+               	     properties: {
+ 		"dsc_material" : {bsonType: "string"maxLength: 100} ,  
+		"vlr_unitario" : {bsonType: "int"maxLength: 100} , 
+                                 }
+              }
+     }
+})
+
+c)
+db.createCollection("aluno", {
+    validator: {
+             $jsonSchema : {
+                   bsonType: "object",
+                   required: [ "nome_aluno" ],
+                   properties: {
+	"nome_aluno": {bsonType: "string" maxLength: 100},
+        "email_aluno": {bsonType: "string", maxLength: 100}},
+        "fone_contato": {bsonType: "string", maxLength: 14} 
+                   }
+             }
+    }
+})
+
+db.createCollection("curso", {
+    validator: {
+             $jsonScohema : {
+                   bsonType: "object",
+                   required: [ "nome_curso" ],
+                   properties: {
+	"nome_curso": {bsonType: "string", maxLength: 100},
+        "carga_horaria": {bsonType: "int", minimum: 0}}
+                   }
+             }
+    }
+})
+
+
+db.createCollection("turma", {
+    validator: {
+             $jsonSchema : {
+                   bsonType: "object",
+                   required: [ "id_curso, id_aluno, data_matricula" ],
+                   properties: {
+			"id_curso": {bsonType: "objectId"},
+                        "id_aluno": {bsonType: "objectId"},
+                        "data_matricula": {bsonType: "date"}
+                   }
+             }
+    }
+})
+
+d)
+db.createCollection("medico",{
+ validator: {
+             $jsonSchema : {
+                   bsonType: "object",
+                   required: ["nome_medico","cod_especialidade" ],
+                   properties: {
+			"nome_medico": {bsonType: "string"maxLength: 100},
+                        "cod_especialidade": {bsonType: "int"maxLength: 100},
+                        
+                   }
+             }
+    }
+})
+
+
+db.createCollection("especialidade",{
+ validator: {
+             $jsonSchema : {
+                   bsonType: "object",
+                   required: ["cod_especialidade","dsc_especialidade" ],
+                   properties: {
+			"dsc_especialidade": {bsonType: "string"maxLength: 100},
+                       
+                   }
+             }
+    }
+})
+
+
+
+db.createCollection("consulta",{
+ validator: {
+             $jsonSchema : {
+                   bsonType: "object",
+                   required: ["id_consulta","id_medico","id_paciente","data_consulta"],
+                   properties: {
+		       "id_medico": {bsonType: "objectId},
+                       "id_paciente": {bsonType: "objectId"},
+                       "data_consulta": {bsonType: "object"},
+                   }
+             }
+    }
+})
+
+
+
+db.createCollection("paciente",{
+ validator: {
+             $jsonSchema : {
+                   bsonType: "object",
+                   required: ["id_especialidade","nome_paciente"],
+                   properties: {
+			"nome_paciente": {bsonType: "string"maxLength: 100},
+                       
+                   }
+             }
+    }
+})
+
+
+e)
+db.createCollection("id_livro",{
+ validator: {
+             $jsonSchema : {
+                   bsonType: "object",
+                   required: ["id_livro","num_isbn","tit_livro","cod_editora" ],
+                   properties: {
+	"num_isbn": {bsonType:"int"maxLength: 100},
+        "tit_livro": {bsonType:"string"maxLength: 100},
+        "num_paginas": {bsonType: "int"},
+        "cod_editora" {bsontype:"int"},
+                   }
+             }
+    }
+})
+
+
+
+
+db.createCollection("editora",{
+ validator: {
+             $jsonSchema : {
+                   bsonType: "object",
+                   required: ["cod_editora","nome_editora"],
+                   properties: {
+       "nome_editora": {bsonType: "string"maxLength: 100},
+                       
+                   }
+             }
+    }
+})
+
+
+
+db.createCollection("id_emprestimo",{
+validator: {
+             $jsonSchema : {
+                   bsonType: "object",
+                   required: ["id_emprestimo","id_livro","id_aluno","dat_emprestimo"],
+                   properties: {
+		       "id_livro": {bsonType:"int"}
+                       "id_aluno": {bsonType:"int"},
+                       "dat_emprestimo": {bsonType: "string"},
+                       "dat_devolucao": {bsontype:"string"},
+                   }
+             }
+    }
+})
+
+db.createCollection("aluno",{
+ validator: {
+             $jsonSchema : {
+                   bsonType: "object",
+                   required: ["id_aluno","num_matricula","nome_aluno"],
+                   properties: {
+			"num_matricula": {bsonType: "string"},
+                        "nome_aluno": {bsonType: "string"maxLength: 100},
+                   }
+             }
+    }
 })
