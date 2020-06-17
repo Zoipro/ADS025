@@ -1,1 +1,100 @@
+1. Crie as coleções no MongoDB para cada modelo físico de banco de dados relacional.
 
+a)
+db.createCollection("projeto", {
+     validator: {
+             $jsonSchema : {
+                     bsonType: "object", 
+                     required: [ "numeroProjeto", "nomeProjeto" ],
+                     properties: {
+			"numeroProjeto" : { bsonType: "int" },
+      "nomeProjeto" : { bsonType: "string" },
+                                    
+                     }
+            }
+     }
+})
+
+db.createCollection("gerente", {
+     validator: {
+             $jsonSchema : {
+                     bsonType: "object",
+                     required: ["numeroGerente", "nomeGerente"],
+               			 properties: {
+ 			        "numeroGerente" : {bsonType: "int" } ,
+              "nomeGerente" : { bsonType: "string" },                                       
+                                 }
+              }
+     }
+})
+
+db.createCollection("projeto_empregado", {
+     validator: {
+             $jsonSchema : {
+                     bsonType: "object",
+                     required: ["numero_projeto", "numero_empregado"],
+               			 properties: {
+ 		"horas_trabalhadas_projeto" : {bsonType: "int"} ,                                    
+                                 }
+              }
+     }
+})
+
+db.createCollection("empregado", {
+     validator: {
+             $jsonSchema : {
+                     bsonType: "object",
+                     required: ["numero_empregado", "nome_empregado"],
+               			 properties: {
+ 		"numero_depto" : {bsonType: "int"} ,                                    
+                                 }
+              }
+     }
+})
+
+db.createCollection("departamento", {
+     validator: {
+             $jsonSchema : {
+                     bsonType: "object",
+                     required: ["numero_depto", "nome_depto"],
+               			 properties: {
+ 		"nome_depto" : {bsonType: "string"} ,                                    
+                                 }
+              }
+     }
+})
+
+b)
+db.createCollection("pedido", {
+     validator: {
+             $jsonSchema : {
+                     bsonType: "object",
+                     required: ["cod_pedido", "dat_emissao", "cod_fornecedor"],
+               			 properties: {
+ 		"vlr_total_pedido" : {bsonType: "int"} ,                                    
+                                 }
+              }
+     }
+})
+
+db.createCollection("fornecedor", {
+     validator: {
+             $jsonSchema : {
+                     bsonType: "object",
+                     required: ["cod_fornecedor", "nom_fornecedor"],
+               			 properties: {
+ 		"end_fornecedor" : {bsonType: "string"} ,                                    
+                                 }
+              }
+     }
+})
+
+db.createCollection("pedido_material", {
+     validator: {
+             $jsonSchema : {
+                     bsonType: "object",
+                     required: ["cod_pedido", "cod_material","qtde_material","vlr_material"],                                   
+                                 }
+              }
+     }
+})
