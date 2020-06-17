@@ -10,7 +10,7 @@ db.createCollection("aluno", {
      validator: {
              $jsonSchema : {
                      bsonType: "object", 
-                     required: [ "id_aluno"],
+                     required: [ "id_aluno","nome_aluno"],
                      properties: {
       "id_aluno" : { bsonType: "objectId" }
       "nome_aluno" : { bsonType: "string"maxLength: 100 },             
@@ -26,12 +26,40 @@ CREATE TABLE disciplina(
   PRIMARY KEY(id_disciplina)
 );
 
+db.createCollection("disciplina", {
+     validator: {
+             $jsonSchema : {
+                     bsonType: "object", 
+                     required: [ "id_disciplina","nome_disciplina"],
+                     properties: {
+      "id_disciplina" : { bsonType: "objectId" },
+      "nome_disciplina" : { bsonType: "string"maxLength: 100 },          
+      "carga_horaria" : { bsonType: "int" minimum: 0}, 
+                     }
+            }
+     }
+})
+
 CREATE TABLE professor(
   id_professor INT NOT NULL,
   nome_professor VARCHAR(100) NOT NULL,
   titulacao_professor VARCHAR(50) NOT NULL,
   PRIMARY KEY(id_professor)
 );
+
+db.createCollection("professor", {
+     validator: {
+             $jsonSchema : {
+                     bsonType: "object", 
+                     required: [ "id_professor","nome_professor","titulacao_professor"],
+                     properties: {
+      "id_professor" : { bsonType: "objectId" },
+      "nome_professor" : { bsonType: "string"maxLength: 100 },          
+      "titulacao_professor" : { bsonType: "string"maxLength: 50 }, 
+                     }
+            }
+     }
+})
 
 CREATE TABLE turma(
   id_turma INT NOT NULL,
@@ -44,6 +72,21 @@ CREATE TABLE turma(
   FOREIGN KEY(id_professor) REFERENCES professor(id_professor) ON DELETE CASCADE,
   FOREIGN KEY(id_disciplina) REFERENCES disciplina(id_disciplina)
 );
+
+db.createCollection("turma", {
+     validator: {
+             $jsonSchema : {
+                     bsonType: "object", 
+                     required: [ "id_turma","num_periodo"],
+                     properties: {
+      "id_turma" : { bsonType: "objectId" },
+      "id_professor" : { bsonType: "objectId" },
+      "nome_professor" : { bsonType: "string"maxLength: 100 },          
+      "titulacao_professor" : { bsonType: "string"maxLength: 50 }, 
+                     }
+            }
+     }
+})
 
 CREATE TABLE historico(
   id_historico INT NOT NULL,
