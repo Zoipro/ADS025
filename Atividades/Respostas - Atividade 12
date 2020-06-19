@@ -121,6 +121,12 @@ db.createCollection("historico", {
 
 b) Insira um registro na tabela aluno preechendo somente a coluna id_aluno com o valor 1. Qual foi o resultado?
 
+> db.alunos.insert({
+...  id_aluno: 1,
+... })
+WriteResult({ "nInserted" : 1 })
+>
+
 c) Insira os seguintes registros na tabela aluno.
 
 id_aluno        nome_aluno
@@ -129,6 +135,41 @@ id_aluno        nome_aluno
 3               BRUNO
 4               CARLA
 5               PEDRO
+
+> db.aluno.insert({_id_aluno: 1, "nome_aluno" : "Jose"})
+WriteResult({ "nInserted" : 1 })
+> db.aluno.find()
+{ "_id_aluno" : 1, "nome_aluno" : "Jose" }     
+
+> db.aluno.insert({_id_aluno: 2, "nome_aluno" : "MARIA"})
+WriteResult({ "nInserted" : 1 })
+> db.aluno.find()
+{ "_id_aluno" : 1, "nome_aluno" : "Jose" }
+{ "_id_aluno" : 2, "nome_aluno" : "MARIA" }
+
+>  db.aluno.insert({_id_aluno: 3, "nome_aluno" : "BRUNO"})
+WriteResult({ "nInserted" : 1 })
+> db.aluno.find()
+{ "_id_aluno" : 1, "nome_aluno" : "Jose" }
+{ "_id_aluno" : 2, "nome_aluno" : "MARIA" }
+{ "_id_aluno" : 3, "nome_aluno" : "BRUNO" }
+
+>  db.aluno.insert({_id_aluno: 4, "nome_aluno" : "CARLA"})
+WriteResult({ "nInserted" : 1 })
+> db.aluno.find()
+{ "_id_aluno" : 1, "nome_aluno" : "Jose" }
+{ "_id_aluno" : 2, "nome_aluno" : "MARIA" }
+{ "_id_aluno" : 3, "nome_aluno" : "BRUNO" }
+{ "_id_aluno" : 4, "nome_aluno" : "CARLA" }
+
+>  db.aluno.insert({_id_aluno: 5, "nome_aluno" : "PEDRO"})
+WriteResult({ "nInserted" : 1 })
+> db.aluno.find()
+{ "_id_aluno" : 1, "nome_aluno" : "Jose" }
+{ "_id_aluno" : 2, "nome_aluno" : "MARIA" }
+{ "_id_aluno" : 3, "nome_aluno" : "BRUNO" }
+{ "_id_aluno" : 4, "nome_aluno" : "CARLA" }
+{ "_id_aluno" : 5, "nome_aluno" : "PEDRO" }
 
 d) Insira um registro na tabela disciplina com os valores 1 para id_disciplina, BANCO DE DADOS I para nome_disciplina e -1 para carga_horaria. Qual foi o resultado?
 
